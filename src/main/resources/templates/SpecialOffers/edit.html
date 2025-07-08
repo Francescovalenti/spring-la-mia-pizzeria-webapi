@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modifica Offerta Speciale</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.6/css/bootstrap.min.css}">
+</head>
+
+<body class="bg-light">
+<div class="container mt-5">
+    <h1 class="mb-4">Modifica Offerta Speciale</h1>
+
+    <form th:action="@{/specialoffers/{id}/update(id=${specialOffer.id})}"  th:object="${specialOffer}" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Titolo</label>
+            <input id="title" type="text" class="form-control" th:field="*{title}" th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="startDate" class="form-label">Data di inizio</label>
+            <input type="date" id="startDate" th:field="*{startDate}" class="form-control" th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('startDate')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('startDate')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="enDate" class="form-label">Data di fine</label>
+            <input type="date" id="enDate" th:field="*{enDate}" class="form-control" th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('enDate')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('enDate')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a th:href="@{/pizzas}" class="btn btn-secondary">Annulla</a>
+            <button type="submit" class="btn btn-primary">Aggiorna Offerta</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

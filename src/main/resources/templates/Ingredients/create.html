@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuovo Ingrediente</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.6/css/bootstrap.min.css}" />
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h1>Crea nuovo ingrediente</h1>
+    <form th:action="@{/ingredients}" th:object="${ingredient}" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" id="name" class="form-control" th:field="*{name}" th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        </div>
+        <a th:href="@{/ingredients}" class="btn btn-secondary">Annulla</a>
+        <button type="submit" class="btn btn-success">Salva</button>
+    </form>
+</div>
+<script th:src="@{/webjars/bootstrap/5.3.6/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

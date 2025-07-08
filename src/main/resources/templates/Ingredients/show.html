@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Ingrediente: ' + ${ingredient.name}">Ingrediente</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.6/css/bootstrap.min.css}" />
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h1 th:text="'Ingrediente: ' + ${ingredient.name}"></h1>
+    <p><strong>ID:</strong> <span th:text="${ingredient.id}"></span></p>
+    <p><strong>Nome:</strong> <span th:text="${ingredient.name}"></span></p>
+
+    <a th:href="@{/ingredients}" class="btn btn-secondary">Indietro</a>
+    <a th:href="@{/ingredients/{id}/edit(id=${ingredient.id})}" class="btn btn-primary">Modifica</a>
+</div>
+<script th:src="@{/webjars/bootstrap/5.3.6/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
