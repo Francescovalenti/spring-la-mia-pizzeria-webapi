@@ -1,4 +1,4 @@
-package org.pizza.java.spring_la_mia_pizzeria_relazioni.model;
+package org.pizza.java.spring_la_mia_pizzeria_webapi.model;
 
 import java.util.Set;
 

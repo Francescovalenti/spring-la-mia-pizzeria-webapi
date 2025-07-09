@@ -1,6 +1,6 @@
-package org.pizza.java.spring_la_mia_pizzeria_relazioni.repository;
+package org.pizza.java.spring_la_mia_pizzeria_webapi.repository;
 
-import org.pizza.java.spring_la_mia_pizzeria_relazioni.model.User;
+import org.pizza.java.spring_la_mia_pizzeria_webapi.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;

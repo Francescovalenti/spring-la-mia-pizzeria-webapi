@@ -1,12 +1,9 @@
-package org.pizza.java.spring_la_mia_pizzeria_relazioni.model;
+package org.pizza.java.spring_la_mia_pizzeria_webapi.model;
 
-import java.util.List;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,22 +12,18 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "Ingredients")
-
-public class Ingredient {
+@Table(name="roles")
+public class Role {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "Name cannot be null,empty or blank")
     private String name;
 
-    @ManyToMany(mappedBy = "ingredients")
-    @JsonBackReference
-    private Set<Pizza> pizzas;
+    @ManyToMany (mappedBy ="roles",fetch = FetchType.EAGER)
+    private Set<User> users;
 
-    
     public Integer getId() {
         return this.id;
     }
@@ -47,12 +40,14 @@ public class Ingredient {
         this.name = name;
     }
 
-    public Set<Pizza> getPizzas() {
-        return this.pizzas;
+    public Set<User> getUsers() {
+        return this.users;
     }
 
-    public void setPizzas(Set<Pizza> pizzas) {
-        this.pizzas = pizzas;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 
+
+    
 }

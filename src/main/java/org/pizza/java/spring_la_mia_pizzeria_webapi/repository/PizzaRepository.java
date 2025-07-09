@@ -1,8 +1,8 @@
-package org.pizza.java.spring_la_mia_pizzeria_relazioni.repository;
+package org.pizza.java.spring_la_mia_pizzeria_webapi.repository;
 
 import java.util.List;
 
-import org.pizza.java.spring_la_mia_pizzeria_relazioni.model.Pizza;
+import org.pizza.java.spring_la_mia_pizzeria_webapi.model.Pizza;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.math.BigDecimal;
 

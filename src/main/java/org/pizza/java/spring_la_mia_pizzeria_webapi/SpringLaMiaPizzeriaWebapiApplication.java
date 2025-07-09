@@ -1,4 +1,4 @@
-package org.pizza.java.spring_la_mia_pizzeria_relazioni;
+package org.pizza.java.spring_la_mia_pizzeria_webapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

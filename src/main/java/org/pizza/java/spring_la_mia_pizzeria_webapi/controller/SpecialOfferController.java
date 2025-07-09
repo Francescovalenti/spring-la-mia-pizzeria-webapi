@@ -1,11 +1,11 @@
-package org.pizza.java.spring_la_mia_pizzeria_relazioni.controller;
+package org.pizza.java.spring_la_mia_pizzeria_webapi.controller;
 
 import java.util.Optional;
 
-import org.pizza.java.spring_la_mia_pizzeria_relazioni.model.Pizza;
-import org.pizza.java.spring_la_mia_pizzeria_relazioni.model.SpecialOffer;
-import org.pizza.java.spring_la_mia_pizzeria_relazioni.repository.PizzaRepository;
-import org.pizza.java.spring_la_mia_pizzeria_relazioni.repository.SpecialOfferRepository;
+import org.pizza.java.spring_la_mia_pizzeria_webapi.model.Pizza;
+import org.pizza.java.spring_la_mia_pizzeria_webapi.model.SpecialOffer;
+import org.pizza.java.spring_la_mia_pizzeria_webapi.repository.PizzaRepository;
+import org.pizza.java.spring_la_mia_pizzeria_webapi.repository.SpecialOfferRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
