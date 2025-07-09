@@ -18,13 +18,28 @@
             </div>
         </div>
 
-        <div class="mb-3">
-            <label for="description" class="form-label">Descrizione</label>
-            <textarea id="description" class="form-control" th:field="*{description}" th:errorClass="is-invalid"></textarea>
-            <div class="invalid-feedback" th:if="${#fields.hasErrors('description')}">
-                <ul><li th:each="err : ${#fields.errors('description')}" th:text="${err}"></li></ul>
+          <div class="mb-3">
+            <label class="form-label">Ingredienti</label>
+            <div class="form-check" th:each="ingredient : ${ingredients}">
+                <input class="form-check-input" type="checkbox"
+                       th:field="*{ingredients}"
+                       th:value="${ingredient.id}"
+                       th:id="'ingredient_' + ${ingredient.id}">
+                <label class="form-check-label" th:for="'ingredient_' + ${ingredient.id}"
+                       th:text="${ingredient.name}"></label>
+                       <div class="invalid-feedback" th:if="${#fields.hasErrors('ingredients')}" th:errorClass="is-invalid">
+                <ul><li th:each="err : ${#fields.errors('ingredients')}" th:text="${err}"></li></ul>
+            </div>
             </div>
         </div>
+
+        <!-- <div class="mb-3">
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea id="description" class="form-control" th:field="*{description}" th:errorClass="is-invalid"></textarea>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('description')}" th:errorClass="is-invalid">
+                <ul><li th:each="err : ${#fields.errors('description')}" th:text="${err}"></li></ul>
+            </div>
+        </div> -->
 
         <div class="mb-3">
             <label for="pic" class="form-label">URL Immagine</label>
@@ -42,18 +57,7 @@
             </div>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">Ingredienti</label>
-            <div class="form-check" th:each="ingredient : ${ingredients}">
-                <input class="form-check-input" type="checkbox"
-                       th:field="*{ingredients}"
-                       th:value="${ingredient.id}"
-                       th:id="'ingredient_' + ${ingredient.id}">
-                <label class="form-check-label" th:for="'ingredient_' + ${ingredient.id}"
-                       th:text="${ingredient.name}"></label>
-            </div>
-        </div>
-
+      
         <div class="d-flex justify-content-between">
             <a th:href="@{/pizzas}" class="btn btn-secondary">Annulla</a>
             <button type="submit" class="btn btn-success">Salva Pizza</button>

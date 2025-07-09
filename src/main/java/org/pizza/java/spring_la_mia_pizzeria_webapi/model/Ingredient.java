@@ -19,7 +19,7 @@ import jakarta.validation.constraints.NotBlank;
 
 public class Ingredient {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false)
@@ -30,7 +30,6 @@ public class Ingredient {
     @JsonBackReference
     private Set<Pizza> pizzas;
 
-    
     public Integer getId() {
         return this.id;
     }
@@ -53,6 +52,11 @@ public class Ingredient {
 
     public void setPizzas(Set<Pizza> pizzas) {
         this.pizzas = pizzas;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
 }

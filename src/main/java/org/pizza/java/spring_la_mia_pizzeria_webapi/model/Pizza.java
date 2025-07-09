@@ -30,7 +30,7 @@ public class Pizza {
     @Size(max = 100, message = "Il nome non può superare 100 caratteri")
     @Column(name = "nome")
     private String name;
-    @NotBlank(message = "La descrizione è obbligatoria")
+    
     @Size(max = 255, message = "La descrizione non può superare 255 caratteri")
     @Column(name = "descrizione")
     private String description;

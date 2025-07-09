@@ -58,7 +58,9 @@
                     </tr>
                     <tr th:each="pizza : ${pizzas}" th:object="${pizza}">
                         <td th:text="${pizza.name}"></td>
-                        <td th:text="${pizza.description}"></td>
+                        <td th:text="${#strings.listJoin(pizza.ingredients.![name], ', ')}"></td>
+
+                        
                         <td><img th:src="${pizza.pic}" style="width: 80px;"></td>
 
                         <td th:text="${#numbers.formatCurrency(pizza.price)}">€ 0.00</td>
