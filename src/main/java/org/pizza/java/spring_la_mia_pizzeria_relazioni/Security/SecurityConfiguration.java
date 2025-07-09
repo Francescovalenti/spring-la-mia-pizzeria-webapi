@@ -7,7 +7,6 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -21,7 +20,11 @@ public class SecurityConfiguration {
                 .requestMatchers("/pizzas/**").hasAnyAuthority("USER", "ADMIN")
                 .requestMatchers("/ingredients/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults());
+                .formLogin(Customizer.withDefaults())
+                .cors(cors -> cors.disable())
+                .csrf(csrf -> csrf.disable());
+                
+                
 
         return http.build();
     }
