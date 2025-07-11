@@ -1,4 +1,4 @@
-package org.pizza.java.spring_la_mia_pizzeria_webapi.api;
+package org.pizza.java.spring_la_mia_pizzeria_webapi.controller.api;
 
 import java.util.List;
 import java.util.Optional;
