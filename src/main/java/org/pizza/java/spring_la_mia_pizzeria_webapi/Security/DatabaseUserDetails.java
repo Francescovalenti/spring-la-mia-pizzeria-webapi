@@ -49,12 +49,12 @@ public class DatabaseUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true; // per semplicità sempre true
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true; // idem
+        return true; 
     }
 
     @Override
